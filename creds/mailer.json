@@ -1,0 +1,6 @@
+{
+	"EmailTo": "<email address>",
+	"EmailFrom": "<email address>",
+	"User": "<user id for mailserver / email address>",
+	"Password": "<password for mailserver>"
+}

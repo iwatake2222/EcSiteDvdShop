@@ -1,0 +1,30 @@
+<?php include '_header.phtml'; ?>
+
+<section class="container">
+
+	<h2>Blog (Change Log)</h2>
+
+	<?php foreach($this->data['blogs'] as $blog) { ?>
+	<article>
+		<h3><?php echo $blog->date; ?> </h3>
+		<p><?php echo $blog->comment; ?> </p>
+		<p>by <?php echo $blog->writer; ?></p>
+	</article>
+	<?php } ?>
+</section>
+
+<section id="blog_post" class="container">
+	<!-- post blog form comes here -->
+	<h3>Add comment</h3>
+	<form id="post-blog" class="form-horizontal" method="POST" action="/blog">
+		<textarea class="form-control" id="blog_comment" name="blog_comment" rows="3" placeholder="Comment"></textarea>
+		<input type="text" class="form-control" id="blog_writer" name="blog_writer" placeholder="Name">
+		<input type="password" class="form-control" id="blog_passwd" name="blog_passwd" placeholder="Password">
+		<button type="submit" class="btn btn-default">Add Comment</button>
+	</form>
+</section>
+
+
+
+<?php include '_footer.phtml'; ?>
+

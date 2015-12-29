@@ -1,0 +1,43 @@
+<?php include '_header.phtml'; ?>
+
+
+<section class="container">
+
+	<h2>Search Results</h2>
+	<h3>keywords:</h3>
+	<?php
+	echo $this->data['keywords'];
+	?>
+	<p>
+		<?php echo count($this->data['products']); ?> results found
+	</p>
+
+	<!-- search results comes here -->
+	<?php
+	foreach($this->data['products'] as $product) {
+		echo '<article class="product-listed">';
+		echo '<h3 class="title"><a href="/product/' . $product->id . '">' . $product->name . '</a></h3>';
+		echo '
+			<div class="row">
+				<div class="col-xs-3">
+					<a href="/product/' . $product->id . '">
+						<img class="jacket" src="' . $product->image . '" width = 100% alt="' . $product->name . '" title="' . $product->name . '">
+					</a>
+				</div>
+				<div class="col-xs-9">
+					<p class="description">Description: ' . $product->description . '</p>
+					<p class="actors">Actors: ' . $product->starring . '</p>
+					<!--<p class="date">Date: ' . $product->date . '</p>-->
+					<!--<p class="price">Price: $' . $product->price . '</p>-->
+				</div>
+			</div>
+		</article>
+		';
+	}
+	?>
+
+</section>
+
+
+
+<?php include '_footer.phtml'; ?>

@@ -1,0 +1,6 @@
+{
+	"ClientID": "<Google OAuth 2.0 Client ID>",
+	"ClientSecret":"<Google OAuth 2.0 Client Secret>",
+	"Users": ["<user1 email address>", "<user2 email address>", "<...>"],
+	"Admins": ["<user1 email address>", "<...>"]
+}

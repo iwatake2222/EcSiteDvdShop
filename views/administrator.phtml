@@ -1,0 +1,148 @@
+<?php include '_header.phtml'; ?>
+
+<section id="administrator" class="container" ng-app="appAdmin" ng-controller="ctrlAdmin">
+	<h2>Administrator Console</h2>
+
+	<div class="alert alert-success" role="alert" ng-show="showResult">
+		{{result}}
+	</div>
+
+	<article>
+		<h3>Add New Product</h3>
+		<form>
+			<button class="btn btn-primary" data-toggle="modal" data-target="#createEdit" ng-click="checkAddProduct()">
+				<i class="fa fa-plus"></i>&nbsp; Add
+			</button>
+		</form>
+		<br>
+		<h3>Product List</h3>
+		<div ng-repeat="(n, product) in productList track by n">
+			{{product.id}} : {{product.name}}<br>
+			<button class="btn btn-primary" data-toggle="modal" data-target="#createEdit" ng-click="checkEditProduct(n)">
+				<i class="fa fa-pencil"></i>&nbsp;Edit
+			</button>
+			<button class="btn btn-danger" data-toggle="modal" data-target="#delete" ng-click="checkDeleteProduct(n)">
+				<i class="fa fa-remove"></i>&nbsp;Delete
+			</button>
+			<br><br>
+		</div>
+	</article>
+
+	<article>
+		<h3>Featured Product ID</h3>
+		<textarea class="form-control" rows="4" ng-model="featuredProduct.str"></textarea><br>
+		<button class="btn btn-success" ng-click="updateFeaturedProducts()">Update</button>
+		<button class="btn btn-default" ng-click="resetFeaturedProducts()">Reset</button>
+	</article>
+
+	<article>
+		<h3>Review</h3>
+		<button class="btn btn-success" ng-click="createReviews()">Create Random Reviews</button><br><br>
+		<button class="btn btn-success" ng-click="clearReviews()">Clear All Reviews</button>
+	</article>
+
+
+	<!-- Delete Modals -->
+	<div class="modal fade" id="delete" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Are You Sure?</h4>
+				</div>
+				<div class="modal-body">
+					<p>About to Delete "{{currentProduct.name}}".</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="deleteProduct()">
+						<i class="fa fa-remove"></i>&nbsp;Delete
+					</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">
+						Cancel
+					</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- Create/Update Modals -->
+	<div class="modal fade" id="createEdit" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">{{title}}</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal" role="form">
+							<div class="form-group">
+								<label class="control-label col-sm-3" for="productname">Name:</label>
+								<div class="col-sm-9">
+									<input ng-model="currentProduct.name" placeholder="product name" id="productname" class="form-control"/>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-3" for="productgenre">Genre:</label>
+								<div class="col-sm-9">
+									<input ng-model="currentProduct.genre" placeholder="product genre" id="productgenre" class="form-control"/>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-3" for="productprice">Price:</label>
+								<div class="col-sm-9">
+									<input ng-model="currentProduct.price" placeholder="product price" id="productprice" class="form-control"/>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-3" for="productdescription">Description:</label>
+								<div class="col-sm-9">
+									<textarea ng-model="currentProduct.description" placeholder="product description" id="productdescription" class="form-control" rows="4"></textarea>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-3" for="productactors">Actors:</label>
+								<div class="col-sm-9">
+									<input ng-model="currentProduct.starring" placeholder="product actors" id="productactors" class="form-control"/>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-3" for="productdate">Date:</label>
+								<div class="col-sm-9">
+									<input ng-model="currentProduct.date" placeholder="e.g. Nov. 17 2015" id="productdate" class="form-control"/>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-3" for="productimage">Image:</label>
+								<div class="col-sm-9">
+									<input ng-model="currentProduct.image" placeholder="e.g. /images/action/abc.jpg" id="productimage" class="form-control"/>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-3" for="productstockQuantity">Stock Quantity:</label>
+								<div class="col-sm-9">
+									<input ng-model="currentProduct.stockQuantity" placeholder="e.g. 999" id="productstockQuantity" class="form-control"/>
+								</div>
+							</div>
+					</form>
+					<p class="text-right">(*) You can use blank</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="saveProduct()">
+						<i class="fa fa-database"></i>&nbsp;Save
+					</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">
+						Cancel
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script src="/js/administrator.js"></script>
+
+<?php include '_footer.phtml'; ?>
+

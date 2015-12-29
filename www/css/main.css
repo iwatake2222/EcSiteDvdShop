@@ -1,0 +1,187 @@
+body {
+	padding-top: 50px;	/* By default, the navbar is 50px high.*/
+/*	background-color: #a0c0e0; */
+	background-color: #f0f0e0;
+	color: #111;
+}
+
+/* basic, common */
+a, a:visited,
+a:hover, a:focus
+{
+	color: #111;
+	text-decoration: none;
+	outline: none;
+}
+
+a.btn, a:visited.btn,
+a:hover.btn, a:focus.btn
+{
+	color: white;
+	text-decoration: none;
+	outline: none;
+}
+
+.red {
+	color: red;
+}
+
+.green {
+	color: green;
+}
+
+.yellow {
+	color: yellow;
+}
+
+textarea {
+    resize: none;
+}
+
+section {
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px #aaa solid;
+}
+
+article {
+	margin: 10px;
+	padding: 20px;
+	background-color: #e0e0e0;
+}
+
+h2 {
+	color: rgb(204, 102, 0);
+}
+
+h3 {
+	margin-top: 10px;
+}
+
+/* footer */
+footer {
+	padding: 10px;
+	background: #333;
+	color: #eee;
+}
+
+
+/* header, navi */
+header {
+
+}
+
+#nav-main a, #nav-main a:visited {
+	color: #eee;
+	text-shadow:0 1px 1px black;
+	font-weight: bold;
+	text-decoration: none;
+	outline: none;
+}
+
+#nav-main a:hover, #nav-main a:focus
+{
+	background-color: #555;
+}
+
+
+/* home */
+#shop-title {
+	font-size: 300%;
+	font-weight: bolder;
+	text-shadow:
+		1px 1px #aaa,
+		2px 2px #888,
+		4px 4px #444,
+		8px 8px #111;
+}
+
+/*
+#products-genre {
+	height:500px;
+	overflow-y: scroll;
+
+}
+*/
+
+article.product-listed h3 {
+	margin: 0 10px 10px;
+
+}
+
+article.product-listed .date {
+	font-style: italic;
+
+}
+
+
+/* product */
+#product-information dt {
+	font-style:italic;
+	font-size: 90%;
+	font-weight: bolder;
+}
+
+#product-information dd {
+	margin-left: 1em;
+}
+
+article.product-review {
+	width: 80%;
+}
+
+#post-review {
+	width: 80%;
+}
+
+/* contact */
+#contact input, #contact textarea {
+	width: 80%;
+	margin: 2px;
+}
+
+
+/* cart */
+#customer-information legend {
+	color: black;
+	font-weight: bold;
+	font-size: 85%;
+	margin-bottom: .5em;
+}
+
+#customer-information label {
+	float: left;
+	width: 8em;
+	text-align: right;
+	margin-right: .5em;
+}
+
+#cart-information tfoot {
+	font-weight: bolder;
+}
+
+#cart-information td {
+	text-align: right;
+}
+
+#cart-information td:first-child {
+	text-align: left;
+}
+
+/* about */
+#about article figure {
+	width: 100%;
+	overflow-x: scroll;
+}
+
+#about article figure figcaption {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+/* blog */
+#blog_post form {
+	max-width: 40em;
+}
+
+
