@@ -12,16 +12,17 @@ A dummy web site for DVD shop.
 
 
  - In the local environment, start server in  www directory
+  - %> composer update
   - %> cd www
   - %> php -S localhost:8000
 
 
  -  How to change remote URL to upload files to OpenShift
   - git remote set-url origin
-ssh://5651554c7628e1549700008e@dvd-iwiw.rhcloud.com/~/git/dvd.git/
+ssh://1234abcd@dvd-iwiw.rhcloud.com/~/git/dvd.git/
   - or
   - git remote add openshift
-ssh://5651554c7628e1549700008e@dvd-iwiw.rhcloud.com/~/git/dvd.git/
+ssh://1234abc@dvd-iwiw.rhcloud.com/~/git/dvd.git/
 
 
  -  How to keep it alive
